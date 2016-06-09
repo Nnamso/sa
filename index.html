@@ -8,10 +8,14 @@
     <link href="bootstrap3/css/bootstrap.css" rel="stylesheet" />
 	<link href="assets/css/get-shit-done.css" rel="stylesheet" />  
     <link href="assets/css/demo.css" rel="stylesheet" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     
     <!--     Font Awesome     -->
     <link href="bootstrap3/css/font-awesome.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="assets/css/jquery-ui.css" />
 
     <style type="text/css">
     h1{
@@ -23,6 +27,7 @@
     .iaag small{
         margin: 20px;
         text-align: center;
+        font-size: 16px;
     }
 </style>
   
@@ -32,15 +37,15 @@
     <div class="main iaag">
         <div class="container">
             <div class="row">
-                <div class="col-sm-9 col-sm-offset-2">
+                <div class="col-md-9 col-md-offset-2">
                     <h1 >Third Party Insurance <br>
-                    <small>Create new insurance</small>
+                    <small>Field marked with * are compulsory</small>
                     </h1>
                     <form class="form-horizontal" action="" method="post">
                         <div class="form-group">
-                            <label class="control-label col-xs-3" for="insured_type"> Insured Type:
+                            <label class="control-label col-md-3" for="insured_type"> Insured Type:*
                             </label>
-                            <div class="col-xs-6">
+                            <div class="col-md-6">
                             <select id="insured_type" class="form-control" name="insured_type" required="required">
                                 <option disabled="" selected="">- Insured Type -</option>
                                 <option value="1">Personal</option>
@@ -49,9 +54,9 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-xs-3" for="insured_type">Title:
+                            <label class="control-label col-md-3" for="insured_type">Title:
                             </label>
-                            <div class="col-xs-6">
+                            <div class="col-md-6">
                             <select id="insured_title" class="form-control" name="insured_type">
                                 <option disabled="" selected="">Mr</option>
                                 <option>Mrs</option>
@@ -59,42 +64,65 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-xs-3" for="name">Name:</label>
-                            <div class="col-xs-6">
+                            <label class="control-label col-md-3" for="name">Full Name:*</label>
+                            <div class="col-md-6">
                             <input type="text" class="form-control" id="name" placeholder="Enter full name?" name="name" required="required" >
                             </div>
                         </div>
                         <div class="form-group">
-                           <label class="control-label col-xs-3" for="gender">Gender:</label>
-                        <div class="col-xs-2">
+                           <label class="control-label col-md-3" for="gender">Gender:*</label>
+                        <div class="col-md-2">
                             <label class="radio ct-blue">
-                                <input type="radio" name="gender" data-toggle="radio" id="gender" value="male" checked>
+                                <input type="radio" name="gender" data-toggle="radio" id="gender" value="1" checked>
                                 <i></i>Male
                             </label>
                         </div>
-                         <div class="col-xs-2">
+                         <div class="col-md-2">
                             <label class="radio ct-blue">
-                                <input type="radio" name="gender" data-toggle="radio" id="gender" value="female">
+                                <input type="radio" name="gender" data-toggle="radio" id="gender" value="2">
                                 <i></i>Female
                             </label>
                         </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-xs-3" for="occupation">Occupation:</label>
-                            <div class="col-xs-6">
-                            <input type="text" class="form-control" id="occupation" placeholder="Enter occupation" name="occupation">
+                          <label class="control-label col-md-3" for="nationality">
+                            Nationality:
+                          </label>
+                          <div class="col-md-6">
+                            <select id="nationality" class="form-control" maxlength="100" name="nationality">
+                              <option selected="selected">Nigerian</option>
+                              <option>Other</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3" for="dob">Date of Birth:</label>
+                            <div class="col-md-6">
+                            <input type="text" class="form-control" id="dob" placeholder="" name="dob">
+                            </div>
+                            </div>
+                         <div class="form-group">
+                            <label class="control-label col-md-3" for="rcno">Company Registration Number:</label>
+                            <div class="col-md-6">
+                            <input type="text" class="form-control" id="rcno" placeholder="987654" name="rcno">
+                            </div>
+                            </div> 
+                        <div class="form-group">
+                            <label class="control-label col-md-3" for="occupation">Occupation:</label>
+                            <div class="col-md-6">
+                            <input type="text" class="form-control" id="occupation" placeholder="banker" name="occupation">
                             </div>
                             </div>
                         <div class="form-group">
-                            <label class="control-label col-xs-3" for="address">Address</label>
-                            <div class="col-xs-6">
+                            <label class="control-label col-md-3" for="address">Address:*</label>
+                            <div class="col-md-6">
                                 <textarea class="form-control" id="address" placeholder="Full address.." rows="2" name="address" required="required">   </textarea>
                             </div>
                         </div>
                         <div class="form-group">
-                                          <label class="control-label col-xs-3" for="select_state">State</label>
-                                          <div class="col-xs-6">
-                                          <select id="select_state" class="form-control" maxlength="40" required="required" name="state"> 
+                                          <label class="control-label col-md-3" for="select_state">State:*</label>
+                                          <div class="col-md-6">
+                                          <select id="select_state" class="form-control" maxlength="90" required="required" name="state"> 
                                             <option value="">Select One</option>
                                             <option value="1">Abia</option>
                                             <option value="2">Abuja</option>
@@ -136,34 +164,58 @@
                                             </select>                                    
                                       </div>
                         </div>
+                         <div class="form-group">
+                            <label class="control-label col-md-3" for="city">City:</label>
+                            <div class="col-md-6">
+                            <input type="text" class="form-control" id="city" placeholder="lekki" name="city">
+                            </div>
+                            </div>
                         <div class="form-group">
-                            <label class="control-label col-xs-3" for="email">Email 
+                            <label class="control-label col-md-3" for="email">Email: 
                             </label>
-                            <div class="col-xs-6">
-                                <input id="email" name="email" type="email" class="form-control" placeholder="andrew@example.com" required="required">
+                            <div class="col-md-6">
+                                <input id="email" name="email" type="email" class="form-control" placeholder="andrew@example.com">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-xs-3" for="phone">Phone number</label>
-                            <div class="col-xs-6">     
-                                <input id="phone" type="text" name="phone_no" class="form-control" placeholder="080xxxxxxx" required="required">
+                            <label class="control-label col-md-3" for="phone">Phone number:*</label>
+                            <div class="col-md-6">     
+                                <input id="phone" type="text" name="phone_no" class="form-control" placeholder="2349099978587" required="required">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-xs-3" for="id"> Proof of id</label>
-                            <div class="col-xs-6">
+                            <label class="control-label col-md-3" for="id"> Proof of id:*</label>
+                            <div class="col-md-6">
                                 <input type="file" id="id" name="proof_of_id" class="form-control" required="required" placeholder="Choose file" size="500" accept="image/*">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-xs-3" for="vreg">Vehicle Registration Number</label>
-                            <div class="col-xs-6">
+                            <label class="control-label col-md-3" for="utility_bill"> Utility Bill:</label>
+                            <div class="col-md-6">
+                                <input type="file" id="utility_bill" name="utility_bill" class="form-control" placeholder="Choose file" size="500" accept="image/*">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3" for="cac01"> CAC O1(Corporate Organization):</label>
+                            <div class="col-md-6">
+                                <input type="file" id="cac01" name="cac01" class="form-control" placeholder="Choose file" size="500" accept="image/*">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3" for="cac02"> CAC O2(Corporate Organization):</label>
+                            <div class="col-md-6">
+                                <input type="file" id="cac02" name="cac02" class="form-control" placeholder="Choose file" size="500" accept="image/*">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3" for="vreg">Vehicle Registration Number:*</label>
+                            <div class="col-md-6">
                                 <input id="vreg" type="text" name="vreg" class="form-control" placeholder="AKN 123 BD" required="required">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-xs-3" for="vmake">Vehicle Make</label>
-                                <div class="col-xs-6">
+                            <label class="control-label col-md-3" for="vmake">Vehicle Make:*</label>
+                                <div class="col-md-6">
                                 <select id="vmake" class="form-control" name="vmake" required="required">
                                   <option value="">  :: SELECT ::  </option>
                                   <option>Abraman</option>
@@ -477,32 +529,32 @@
                                </div>
                          </div>
                          <div class="form-group">
-                             <label class="control-label col-xs-3" for="vmodel">Vehicle Model</label>
-                             <div class="col-xs-6">
+                             <label class="control-label col-md-3" for="vmodel">Vehicle Model:*</label>
+                             <div class="col-md-6">
                                 <input id="vmodel" type="text" name="vmodel" class="form-control" required="required" placeholder="camry">
                              </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-xs-3" for="vengine">Engine Number</label>
-                            <div class="col-xs-6">
-                                <input id="vengine" type="text" class="form-control" name="vengine" required="required" placeholder="4572eg3eh892">
+                            <label class="control-label col-md-3" for="vengine">Engine Number:</label>
+                            <div class="col-md-6">
+                                <input id="vengine" type="text" class="form-control" name="vengine" placeholder="4572eg3eh892">
                             </div>
                         </div>
                          <div class="form-group">
-                            <label class="control-label col-xs-3" for="vchasis">Chasis Number</label>
-                            <div class="col-xs-6">
-                                <input id="chasis" type="text" class="form-control" name="vchasis" required="required" placeholder="whdgweyd76823euh3e787">
+                            <label class="control-label col-md-3" for="vchasis">Chasis Number:</label>
+                            <div class="col-md-6">
+                                <input id="chasis" type="text" class="form-control" name="vchasis"  placeholder="whdgweyd76823euh3e787">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-xs-3" for="vcolour">Vehicle Color</label>
-                            <div class="col-xs-6">
-                                <input id="vcolour" type="text" class="form-control" name="vcolour" required="required" placeholder="black">
+                            <label class="control-label col-md-3" for="vcolour">Vehicle Color:</label>
+                            <div class="col-md-6">
+                                <input id="vcolour" type="text" class="form-control" name="vcolour"  placeholder="black">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-xs-3" for="vtype">Vehicle type</label>
-                            <div class="col-xs-6">
+                            <label class="control-label col-md-3" for="vtype">Vehicle type:*</label>
+                            <div class="col-md-6">
                                 <select id="vtype" class="form-control" class="form-control" name="vtype" required="required">
                                   <option value="1">Motor Cycle</option>
                                   <option value="2">Private Car</option>
@@ -511,20 +563,26 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-xs-3" for="vyear">Year of Manufacture</label>
-                            <div class="col-xs-6">
+                            <label class="control-label col-md-3" for="vyear">Vehicl Year of Make:*</label>
+                            <div class="col-md-6">
                                 <input id="vyear" type="text" name="vyear" class="form-control" required="required" placeholder="2010">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-xs-3" for="vlicense">Vehicle license</label>
-                            <div class="col-xs-6">
+                            <label class="control-label col-md-3" for="vyear">Number of Passenger</label>
+                            <div class="col-md-6">
+                                <input id="vyear" type="text" name="vyear" class="form-control" placeholder="4">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3" for="vlicense">Vehicle license:*</label>
+                            <div class="col-md-6">
                                 <input id="vlicense" type="file" name="vlicense" class="form-control" required="required" placeholder="Choose file" size="500" accept="image/*">
                             </div>
                         </div>
                         <br>
                         <div class="form-group">
-                            <div class="col-xs-offset-3 col-xs-9">
+                            <div class="col-md-offset-3 col-md-9">
                                 <input type="submit" class="btn btn-primary" value="Submit">
                                 <input type="reset" class="btn btn-default" value="Reset">
                             </div>
@@ -540,12 +598,20 @@
 
     <script src="jquery/jquery-1.10.2.js" type="text/javascript"></script>
 	<script src="assets/js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"></script>
 
 	<script src="bootstrap3/js/bootstrap.js" type="text/javascript"></script>
 	<script src="assets/js/gsdk-checkbox.js"></script>
 	<script src="assets/js/gsdk-radio.js"></script>
 	<script src="assets/js/gsdk-bootstrapswitch.js"></script>
 	<script src="assets/js/get-shit-done.js"></script>
-	
-    <script src="assets/js/custom.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+  <script>
+    $( "#dob" ).datepicker({
+  altFormat: "yy-mm-dd",
+  changeMonth: true,
+  changeYear:  true
+});
+  </script>
 </html>
